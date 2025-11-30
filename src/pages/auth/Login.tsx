@@ -1,4 +1,4 @@
-import Login from "../components/storefront/auth/login";
+import Login from "../../components/storefront/auth/login";
 
 const LoginPage = () => {
   return (
