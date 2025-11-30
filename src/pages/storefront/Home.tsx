@@ -1,4 +1,4 @@
-import ImageSlider from "../components/custom/image-slider";
+import ImageSlider from "../../components/custom/image-slider";
 
 const Home = () => {
   return (
