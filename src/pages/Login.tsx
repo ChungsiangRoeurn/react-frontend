@@ -1,8 +1,11 @@
+import Login from "../components/storefront/auth/login";
 
-const Login = () => {
+const LoginPage = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <div className="flex items-center justify-center min-h-[80vh] bg-white">
+      <Login />
+    </div>
+  );
+};
 
-export default Login
+export default LoginPage;
