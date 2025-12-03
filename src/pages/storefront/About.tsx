@@ -1,8 +1,11 @@
+import AboutUs from "../../components/storefront/about/About-us";
 
 const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <>
+      <AboutUs />
+    </>
+  );
+};
 
-export default About
+export default About;
