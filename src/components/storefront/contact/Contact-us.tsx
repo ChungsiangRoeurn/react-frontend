@@ -1,37 +1,9 @@
-import { useEffect, useState, type ChangeEvent } from "react";
-
-type Product = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-};
+import { useState, type ChangeEvent } from "react";
+import { useProducts } from "../../../hooks/useProducts";
 
 export default function Contact() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const { products, loading, error } = useProducts();
   const [search, setSearch] = useState<string>("");
-
-  const getData = async (): Promise<void> => {
-    try {
-      const res = await fetch("https://fakestoreapi.com/products");
-      if (!res.ok) throw new Error("Failed to fetch products");
-
-      const data: Product[] = await res.json();
-      setProducts(data);
-    } catch (err) {
-      setError((err as Error).message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
